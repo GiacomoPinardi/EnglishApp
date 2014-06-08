@@ -125,7 +125,11 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         JOptionPane.showInternalMessageDialog(rootPane, "Impossibile trovare il file oppure il file e' vuoto!", "Errore!", JOptionPane.ERROR_MESSAGE);
     }
     else {
-        JOptionPane.showInternalMessageDialog(rootPane, "Inserite correttamente le parole nel 'dizionario'.", "Eseguito!", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showInternalMessageDialog(rootPane, "Sono state inserite correttamente le parole nel 'dizionario'.", "Eseguito!", JOptionPane.INFORMATION_MESSAGE);
+    }
+    if (g.caricaLista()) {
+            JOptionPane.showInternalMessageDialog(rootPane, "Impossibile trovare il file, oppure file vuoto!", "Errore!", JOptionPane.ERROR_MESSAGE);
+            System.exit(1);
     }
 }//GEN-LAST:event_jButton1ActionPerformed
 

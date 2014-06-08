@@ -24,12 +24,11 @@ public class Gestione {
     FileWriter f2 = null;
     PrintWriter fOUT = null;
     
+    private Random estrattore = new Random();
+    
     private String[] italiano;
     private String[] inglese;
-    private int nEstratto;
-    
-    //public boolean noFile = false; 
-    //public boolean emptyFile = false;
+    private int nEstratto;   
     
     // ritorna un boolean: se true c'e' un errore, se false no.
     public boolean caricaLista() {    
@@ -60,12 +59,11 @@ public class Gestione {
                     }
                     else {
                     String s[] = tmp.split(";");
-                    // 1: key - 2: value 
                     // 1: inglese - 2: italiano
                     inglese[i] = s[0];
                     italiano[i] = s[1];
                     }
-                } 
+                }
             }
             catch (IOException ex) {
                 return true;
@@ -78,8 +76,9 @@ public class Gestione {
     }
     
     public int randomParola() {
-        Random estrattore = new Random();        
-        nEstratto = estrattore.nextInt(inglese.length);          
+        System.out.println("length:" + inglese.length);
+        nEstratto = estrattore.nextInt(inglese.length);
+        System.out.println(nEstratto);
         return nEstratto;
     }
     
@@ -100,10 +99,7 @@ public class Gestione {
         try {
             f2 = new FileWriter("parole.txt", true);
             fOUT = new PrintWriter(f2);
-            
-            //for (int i = 0; i < inglese.length; i++) {
-            //    fOUT.print(inglese[i] + ";" + italiano[i]);
-            //}
+                        
             fOUT.println("");
             fOUT.print(parolaIng + ";" + parolaIta);
             fOUT.close();
