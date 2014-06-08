@@ -76,9 +76,8 @@ public class Gestione {
     }
     
     public int randomParola() {
-        System.out.println("length:" + inglese.length);
+        // inglese.length != inglese.length
         nEstratto = estrattore.nextInt(inglese.length);
-        System.out.println(nEstratto);
         return nEstratto;
     }
     
