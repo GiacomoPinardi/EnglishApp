@@ -26,6 +26,8 @@ public class Gestione {
     
     private Random estrattore = new Random();
     
+    private int nMax;
+    
     private String[] italiano;
     private String[] inglese;
     private int nEstratto;   
@@ -50,6 +52,9 @@ public class Gestione {
                 italiano = new String[l];
                 inglese = new String[l];            
             
+                nMax = italiano.length;
+                System.out.println("nMax (caricaLista()): " + nMax);
+                
                 boolean stop = false;
                 
                 for (int i = 0; !stop; i++) {
@@ -76,8 +81,8 @@ public class Gestione {
     }
     
     public int randomParola() {
-        // inglese.length != inglese.length
-        nEstratto = estrattore.nextInt(inglese.length);
+        System.out.println("nMax (randomParola()): " + nMax);
+        nEstratto = estrattore.nextInt(nMax);
         return nEstratto;
     }
     
